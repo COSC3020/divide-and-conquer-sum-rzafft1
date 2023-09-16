@@ -38,7 +38,7 @@ T(n) = 3 T(n/3) + n/3
      ... 
 T(n) = 3^i (T(n/(9^i)) + i (n/3)
 
-nT(0) + n log n  = n log n exist is O(n log n)
+Therefore, the total time complexity of our algorithm is n log n where n is the number of sub arrays that we are dividing into. This is similar to a binary tree that divides an input by two, except here we divide the input by three. 
 
 Explanation ... 
 
