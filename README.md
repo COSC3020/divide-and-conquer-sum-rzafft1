@@ -53,5 +53,12 @@ Explanation ...
 - we show T(n) growing with the input size i ...
 - 3^i represents the number of subarrays that we need to divide the input array into
 - (n/(3^i)) represent the number of subarrays that we divide the input third of the array into
-- i*(n/3) represents the number of elements that we return from each recursive call of a third of the array 
+- i*(n/3) represents the number of elements that we return from each recursive call of a third of the array
+
+Resources : 
+
+Geeks for Geeks 
+- https://www.geeksforgeeks.org/maximum-subarray-sum-using-divide-and-conquer-algorithm/
+Stack Overflow 
+- https://stackoverflow.com/questions/29927439/algorithms-how-do-divide-and-conquer-and-time-complexity-onlogn-relate
 
