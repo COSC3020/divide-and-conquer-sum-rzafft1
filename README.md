@@ -40,7 +40,7 @@ T(n) = 3 T(n/3) + 3
      ... 
 T(n) = 3^i (T(n/(3^i)) + 3i
 
-Therefore, the total time complexity of our algorithm is n log n where n is the number of sub arrays that we are dividing into. This is similar to a binary tree that divides an input by two, except here we divide the input by three. 
+Therefore, the total time complexity of our algorithm is n log n where n is the number of sub arrays that we are dividing into. This is similar to a binary tree that divides an input by two, except here we divide the input by three. Therefore, we also must note, that since we are dividing by three instead of two, we have complexity log (base 3) NOTE log (base 2)
 
 Explanation ... 
 
