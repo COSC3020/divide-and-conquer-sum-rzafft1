@@ -47,9 +47,9 @@ T(n) = 0 if n < 1 || 3 T($\frac{n}{3}$) + 1 if n => 1
 * NOTE: (T(n/3<sup>log<sub>3</sub>(n)</sup>)) simplifies to T(1)
 - 3<sup>log<sub>3</sub>(n)</sup> * 1 + log<sub>3</sub>(n)
 - n * 1 + log<sub>3</sub>(n) 
-- n + log<sub>3</sub>(n) $\in$ $\theta$ (log<sub>3</sub>(n))
+- n * log<sub>3</sub>(n) $\in$ $\theta$ (log<sub>3</sub>(n))
 
-$\theta$ = log<sub>3</sub>(n)
+$\theta$ = n log (n)
 
 Therefore, the total time complexity of our algorithm is log<sub>3</sub>n. This is a  similar complexity to that of a binary tree that divides an input by two, except here we divide the input by three. Therefore, we also must note, that since we are dividing by three instead of two, we have complexity log (base 3) NOT log (base 2)
 
