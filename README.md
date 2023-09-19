@@ -33,20 +33,20 @@ Recurrence Relation :
 
 T(n) = 0 if n < 1 || 3 T(n/3) + 3 if n => 1
 
-T(n) = 3 T(n/3) + 3
-     = 3 ( 3T((n/3)/3) + 3 ) + 3
-     = 9 T(n/9) + 9 + 3
-     = 9 T(n/9) + 12
-     ... 
-T(n) = 3^i (T(n/(3^i)) + 3i
+- T(n) = 3 T(n/3) + 3
+- T(n) = 3 ( 3T((n/3)/3) + 3 ) + 3
+- T(n) = 9 T(n/9) + 9 + 3
+- T(n) = 9 T(n/9) + 12
+- ... 
+- T(n) = 3^i (T(n/(3^i)) + 3i
 
-now since we are using divide and conquer, and we are dividing into three lists lets let i = log<sub>3</sub>(n)
+- now since we are using divide and conquer, and we are dividing into three lists lets let i = log<sub>3</sub>(n)
 
-=> 3<sup>log<sub>3</sub>(n)</sup> (T(n/3<sup>log<sub>3</sub>(n)</sup>)) + 3(log<sub>3</sub>(n))
-=> T(n/3<sup>log<sub>3</sub>(n)</sup>) = 1 (this is our base case, we stop when n < 1)
-=> 3<sup>log<sub>3</sub>(n)</sup> + 1 + 3(log<sub>3</sub>(n))
-=> n + 1 + 3log<sub>3</sub>(n) (we can remove constants, 3 from 3(log<sub>3</sub>(n)) along with +n and +1)
-=> this leaves us with log<sub>3</sub>(n)
+- 3<sup>log<sub>3</sub>(n)</sup> (T(n/3<sup>log<sub>3</sub>(n)</sup>)) + 3(log<sub>3</sub>(n))
+- T(n/3<sup>log<sub>3</sub>(n)</sup>) = 1 (this is our base case, we stop when n < 1)
+- 3<sup>log<sub>3</sub>(n)</sup> + 1 + 3(log<sub>3</sub>(n))
+- n + 1 + 3log<sub>3</sub>(n) (we can remove constants, 3 from 3(log<sub>3</sub>(n)) along with +n and +1)
+- this leaves us with log<sub>3</sub>(n)
 
 Therefore, the total time complexity of our algorithm is log<sub>3</sub>n where n is the number of sub arrays that we are dividing into. This is similar to a binary tree that divides an input by two, except here we divide the input by three. Therefore, we also must note, that since we are dividing by three instead of two, we have complexity log (base 3) NOTE log (base 2)
 
