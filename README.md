@@ -51,22 +51,22 @@ T(n) = 0 if n < 1 || 3 T($\frac{n}{3}$) + 1 if n => 1
 
 $\theta$ = log<sub>3</sub>(n)
 
-Therefore, the total time complexity of our algorithm is log<sub>3</sub>n where n is the number of sub arrays that we are dividing into. This is similar to a binary tree that divides an input by two, except here we divide the input by three. Therefore, we also must note, that since we are dividing by three instead of two, we have complexity log (base 3) NOTE log (base 2)
+Therefore, the total time complexity of our algorithm is log<sub>3</sub>n. This is a  similar complexity to that of a binary tree that divides an input by two, except here we divide the input by three. Therefore, we also must note, that since we are dividing by three instead of two, we have complexity log (base 3) NOT log (base 2)
 
 Explanation ... 
 
 - T(n) shows the time complexity as the input size, n increases
-- 3 * T(n/3) + 3 represents the recursive call that we make when we divide the input array by 3. 
+- 3 * T(n/3) + 1 represents the recursive call that we make when we divide the input array by 3. 
 - multiplying our recurrence relation by 3 represents a recursive call made. This results in T(n/3) changing to T(n/9) which shows that we need to divide the intial third of the input array by three so that we can return each each element from the initial input third of the array into the total sum of the current third of the array
 - We use n/3 from T(n/3) because we have three recusive calls and each recursive call returns a third of the initial third of the input size
 - The +3 that is added at the end of the recurrence relation shows that we are returning three results from a recursive call
-- So when we simplify T(n) to 9 T(n/9) + 12, the 12 represents the depth of our recursion 'tree', or the number of recursive calls. 
+- So when we simplify T(n) to 9 T(n/9) + 2, the 2 represents the depth of our recursion 'tree', or the number of recursive calls. 
   
 - After evaluating our recurrence relation we show how the recurrence relation grows as input size changes
 - we show T(n) growing with the input size i ...
 - 3^i represents the number of subarrays that we need to divide the input array into
 - (n/(3^i)) represent the number of subarrays that we divide the input third of the array into
-- (i*3) represents the number of calls that we return from each recursive call
+- (+ i) represents the number of calls that we return
 
 Resources : 
 
