@@ -38,7 +38,7 @@ T(n) = 3 T(n/3) + 3
      = 9 T(n/9) + 9 + 3
      = 9 T(n/9) + 12
      ... 
-T(n) = 3^i (T(n/(3^i)) + (3^i) + 3
+T(n) = 3^i (T(n/(3^i)) + 3i
 
 Therefore, the total time complexity of our algorithm is n log n where n is the number of sub arrays that we are dividing into. This is similar to a binary tree that divides an input by two, except here we divide the input by three. 
 
@@ -49,13 +49,13 @@ Explanation ...
 - multiplying our recurrence relation by 3 represents a recursive call made. This results in T(n/3) changing to T(n/9) which shows that we need to divide the intial third of the input array by three so that we can return each each element from the initial input third of the array into the total sum of the current third of the array
 - We use n/3 from T(n/3) because we have three recusive calls and each recursive call returns a third of the initial third of the input size
 - The +3 that is added at the end of the recurrence relation shows that we are returning three results from a recursive call
-- So when we simplify T(n) to 9 T(n/9) + 12, the 12 represents the number of returns
+- So when we simplify T(n) to 9 T(n/9) + 12, the 12 represents the depth of our recursion 'tree', or the number of recursive calls. 
   
 - After evaluating our recurrence relation we show how the recurrence relation grows as input size changes
 - we show T(n) growing with the input size i ...
 - 3^i represents the number of subarrays that we need to divide the input array into
 - (n/(3^i)) represent the number of subarrays that we divide the input third of the array into
-- (3^i) + 3 represents the number of elements that we return from each recursive call of a third of the array
+- (i*3) represents the number of calls that we return from each recursive call
 
 Resources : 
 
