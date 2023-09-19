@@ -40,6 +40,10 @@ T(n) = 3 T(n/3) + 3
      ... 
 T(n) = 3^i (T(n/(3^i)) + 3i
 
+now since we are using divide and conquer, we lets let i = log<sub>3</sub>(n)
+
+=> 3<sup>log<sub>3</sub>(n)</sup> (T(n/3<sup>log<sub>3</sub>(n)</sup>)) + 3(log<sub>3</sub>(n))
+
 Therefore, the total time complexity of our algorithm is n log n where n is the number of sub arrays that we are dividing into. This is similar to a binary tree that divides an input by two, except here we divide the input by three. Therefore, we also must note, that since we are dividing by three instead of two, we have complexity log (base 3) NOTE log (base 2)
 
 Explanation ... 
