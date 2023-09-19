@@ -31,22 +31,23 @@ NOTE : I need to return each recursive call, and I have three recursive calls, t
 
 Recurrence Relation : 
 
-T(n) = 0 if n < 1 || 3 T(n/3) + 3 if n => 1
+T(n) = 0 if n < 1 || 3 T($\frac{n}{3}$) + 1 if n => 1
 
-- T(n) = 3 T(n/3) + 3
-- T(n) = 3 ( 3T((n/3)/3) + 3 ) + 3
-- T(n) = 9 T(n/9) + 9 + 3
-- T(n) = 9 T(n/9) + 12
+- T(n) = 3 T($\frac{n}{3}$) + 1
+- T(n) = 3 ( 3T((n/3)/3) + $\frac{1}{3}$ ) + 1
+- T(n) = 9 T($\frac{n}{9}$) + 2
+- T(n) = 3 ( 9T($\frac{n}{9}$) + $\frac{2}{3}$ ) + 1
+- T(n) = 27 T($\frac{n}{9}$) + 3
 - ... 
-- T(n) = 3^i (T(n/(3^i)) + 3i
+- T(n) = 3<sup>i</sup> T($\frac{n}{3^i}$) + i
 - ...
 - now since we are using divide and conquer, and we are dividing into three lists lets let i = log<sub>3</sub>(n)
 - ...
-- 3<sup>log<sub>3</sub>(n)</sup> (T(n/3<sup>log<sub>3</sub>(n)</sup>)) + 3(log<sub>3</sub>(n))
-  - T(n/3<sup>log<sub>3</sub>(n)</sup>) = 1 (this is our base case, we stop when n < 1)
-- 3<sup>log<sub>3</sub>(n)</sup> + 1 + 3(log<sub>3</sub>(n))
-- n + 1 + 3log<sub>3</sub>(n) (we can remove constants, 3 from 3(log<sub>3</sub>(n)) along with +n and +1)
-- this leaves us with log<sub>3</sub>(n)
+- 3<sup>log<sub>3</sub>(n)</sup> (T(n/3<sup>log<sub>3</sub>(n)</sup>)) + log<sub>3</sub>(n)
+* NOTE: (T(n/3<sup>log<sub>3</sub>(n)</sup>)) simplifies to T(1)
+- 3<sup>log<sub>3</sub>(n)</sup> * 1 + log<sub>3</sub>(n)
+- n * 1 + log<sub>3</sub>(n) 
+- n + log<sub>3</sub>(n) $\in$ $\theta$ (log<sub>3</sub>(n))
 
 $\theta$ = log<sub>3</sub>(n)
 
