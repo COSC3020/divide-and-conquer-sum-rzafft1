@@ -48,7 +48,7 @@ T(n) = 0 if n < 1 || 3 T(n/3) + 3 if n => 1
 - n + 1 + 3log<sub>3</sub>(n) (we can remove constants, 3 from 3(log<sub>3</sub>(n)) along with +n and +1)
 - this leaves us with log<sub>3</sub>(n)
 
-Therefore, $\theta$ = log<sub>3</sub>(n)
+$\theta$ = log<sub>3</sub>(n)
 
 Therefore, the total time complexity of our algorithm is log<sub>3</sub>n where n is the number of sub arrays that we are dividing into. This is similar to a binary tree that divides an input by two, except here we divide the input by three. Therefore, we also must note, that since we are dividing by three instead of two, we have complexity log (base 3) NOTE log (base 2)
 
