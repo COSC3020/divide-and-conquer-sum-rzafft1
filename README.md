@@ -27,33 +27,35 @@ and solve it as we did in the lectures. Give the final $\Theta$ complexity.
 Describe your reasoning and the conclusion you've come to. Your reasoning is the
 most important part. Add your answer to this markdown file.
 
+NOTE : I need to return each recursive call, and I have three recursive calls, therefore I need to return 3 rather than n/3 or 3n because that would infer that I am returning 3n times, or 3/n times per recursive call, however, every recursive all, no matter what, I return a constant 3 times. 
+
 Recurrence Relation : 
 
-T(n) = 0 if n <= 1 || 3 T(n/3) + n/3 if n > 1
+T(n) = 0 if n <= 1 || 3 T(n/3) + 3 if n > 1
 
-T(n) = 3 T(n/3) + n/3
-     = 3 ( 3T((n/3)/3) + n/3 ) + n/3
-     = 9 T(n/9) + 3n/3 + n/3
-     = 9 T(n/9) + 4n/3
+T(n) = 3 T(n/3) + 3
+     = 3 ( 3T((n/3)/3) + 3 ) + 3
+     = 9 T(n/9) + 9 + 3
+     = 9 T(n/9) + 12
      ... 
-T(n) = 3^i (T(n/(9^i)) + i (n/3)
+T(n) = 3^i (T(n/(3^i)) + (3^i) + 3
 
 Therefore, the total time complexity of our algorithm is n log n where n is the number of sub arrays that we are dividing into. This is similar to a binary tree that divides an input by two, except here we divide the input by three. 
 
 Explanation ... 
 
 - T(n) shows the time complexity as the input size, n increases
-- 3 * T(n/3) + n/3 represents the recursive call that we make when we divide the input array by 3. 
+- 3 * T(n/3) + 3 represents the recursive call that we make when we divide the input array by 3. 
 - multiplying our recurrence relation by 3 represents a recursive call made. This results in T(n/3) changing to T(n/9) which shows that we need to divide the intial third of the input array by three so that we can return each each element from the initial input third of the array into the total sum of the current third of the array
 - We use n/3 from T(n/3) because we have three recusive calls and each recursive call returns a third of the initial third of the input size
-- The n/3 that is added at the end of the recurrence relation shows that we are returning a third of the third of the recursive call
-- So when we simplify T(n) to 9 T(n/9) + 4n/3, the 4n/3 represents the size of the list that we return after the first recursive call 
+- The +3 that is added at the end of the recurrence relation shows that we are returning three results from a recursive call
+- So when we simplify T(n) to 9 T(n/9) + 12, the 12 represents the number of returns
   
 - After evaluating our recurrence relation we show how the recurrence relation grows as input size changes
 - we show T(n) growing with the input size i ...
 - 3^i represents the number of subarrays that we need to divide the input array into
 - (n/(3^i)) represent the number of subarrays that we divide the input third of the array into
-- i*(n/3) represents the number of elements that we return from each recursive call of a third of the array
+- (3^i) + 3 represents the number of elements that we return from each recursive call of a third of the array
 
 Resources : 
 
