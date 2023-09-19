@@ -47,7 +47,7 @@ T(n) = 0 if n < 1 || 3 T($\frac{n}{3}$) + 1 if n => 1
 * NOTE: (T(n/3<sup>log<sub>3</sub>(n)</sup>)) simplifies to T(1)
 - 3<sup>log<sub>3</sub>(n)</sup> * 1 + log<sub>3</sub>(n)
 - n * 1 + log<sub>3</sub>(n) 
-- n * log<sub>3</sub>(n) $\in$ $\theta$ (log<sub>3</sub>(n))
+- n * log<sub>3</sub>(n) $\in$ $\theta$ (n log<sub>3</sub>(n))
 
 $\theta$ = n log (n)
 
